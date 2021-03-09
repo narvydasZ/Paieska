@@ -1,0 +1,92 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li a {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+</style>
+
+
+<table style="width: 100%; height: 100%;">
+  <tr>
+    <th rowspan=50 WIDTH =30 BGCOLOR= 9999ff></th>
+    <th  HEIGHT=50 BGCOLOR= ff6633>
+  <input type="text" id="myInput" onkeyup="myFunction()" placeholder="enter movie name" name="search"></th>
+
+  <th rowspan=50 WIDTH =30 BGCOLOR= 9999ff></th>
+    </tr>
+    <tr>
+     
+    <td>
+      <ul id="myUL">
+        <li><a href="https://www.youtube.com/watch?v=1YT5ubkN700">Karibų piratai</a></li>
+        <li><a href="#">Šrekas</a></li>
+      
+        <li><a href="#">Transformeriai</a></li>
+        <li><a href="#">Karibų piratai2</a></li>
+      
+        <li><a href="#">Kapitonas amerika</a></li>
+        <li><a href="#">Žmogus voras</a></li>
+        <li><a href="#">Kerštas</a></li>
+      </ul>
+      </td>
+</table>
+  <script>
+  function myFunction() {
+      var input, filter, ul, li, a, i, txtValue;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      ul = document.getElementById("myUL");
+      li = ul.getElementsByTagName("li");
+      for (i = 0; i < li.length; i++) {
+          a = li[i].getElementsByTagName("a")[0];
+          txtValue = a.textContent || a.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              li[i].style.display = "";
+          } else {
+              li[i].style.display = "none";
+          }
+      }
+  }
+  </script>
+
+
+     
+     
+
+
